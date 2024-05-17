@@ -1,0 +1,22 @@
+\begin{tabularx}{\linewidth}{lllXXXll}
+	\csvreader[
+		tabular=|lllXXXll|,
+		no head,
+		table head = \hline,
+		late after first line = \\\hline,
+		table foot = \hline,
+		respect underscore = true,
+		separator = semicolon
+	]{../data/bom.csv}{}{%
+		\ifnum\thecsvrow=18 \hline \fi%
+		\csvcoli &%
+		\csvcolii &%
+		\csvcoliii &%
+		\csvcoliv &%
+		\csvcolv &%
+		\csvcolvi &%
+		\csvcolvii &%
+		\csvcolviii %
+	}
+	\label{bom}
+\end{tabularx}

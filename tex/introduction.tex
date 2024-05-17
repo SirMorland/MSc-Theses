@@ -1,23 +1,9 @@
-This document template conforms to the Guide to Writing a Thesis in Tampere University \parencite{thesisguide2018}. A thesis typically includes the following parts:
+\glspl{dmi}, or synthesizers in layman terms, are great instruments for making a variety of different sounds. Unlike traditional instruments that produce sound by directly vibrating the air with i.e. a string or a membrane, they generate electrical signals that represent the audio waves. This causes \glspl{dmi} to inherently lose to traditional instruments in tactility, and all forms of primary feedback must be intentionally designed.
 
-\begin{enumerate}
-    \item[] Title page
-    \item[] Abstract in English (and in Finnish)
-    \item[] Preface
-    \item[] Contents
-    \item[] (Lists of figures and tables)
-    \item[] List of abbreviations and symbols
-    \item Introduction
-    \item Theoretical background
-    \item Research methodology and material
-    \item Results and analysis (possibly in separate chapters)
-    \item Conclusions
-    \item[] References
-    \item[] (Appendices)
-\end{enumerate}
+With older \glspl{dmi} each parameter of the \gls{synth} was exposed as a dedicated input in the user interface, i.e. as a button, knob, or slider, and thus had a "knob-per-function" interface. This allowed each input, and as a by-product each parameter, to have unique feel, or tactile feedback. Depending on what the designer of the instrument wanted, some knobs could turn smoothly while others could have more resistance, some sliders could stay on the position they were set in while others could spring back to the initial position, and most prominently some inputs could move freely while others could have discreet steps or detents they lock in. This helps the player to control the instruments more efficiently, as they can trust their fingers in addition to their eyes and ears.
 
-Each of these is written as a new \verbcommand{chapter} or using an appropriate command (e.g. \verbcommand{abstract}). Read this document template and its comments carefully. The titles of chapters from 1 to 5 are provided as examples only. You should use more descriptive ones. The title page is created by inserting the relevant information into the commands near the start of the template. The table of contents lists all the numbered headings after it, but not always the preceding headings.
+However, modern, especially digital, synthesizers contain more and more functions, and it is physically impossible to fit a dedicated input for each parameter while still having a reasonably sized instrument. Thus, inevitably some inputs have to alternate controlling multiple different parameters, which causes the feel of the inputs to become generic. Players can't depend on their fingers anymore, instead they need to look for visual indicators, usually led lights or small displays, to see what they are changing and how much.
 
-Introduction outlines the purpose and objectives of the presented research. The background information, utilized methods and source material are presented next at a level that is necessary to understand the rest of the text. Then comes the discussion regarding the achieved results, their significance, error sources, deviations from the expected results, and the reliability of your research. The conclusions form the most important chapter. It does not repeat the details already presented, but summarizes them and analyzes their consequences. List of references enables your reader to find the cited sources.
+Meanwhile various motorized inputs were surfacing to consumer markets in the start of 2020s. Notably Sony PlayStation 5's DualSense controller introduced adaptive triggers with force feedback for a wide audience, being able to change the resistance of the triggers depending on situation and simulate interaction with physical objects like pushing car's brake pedal or shooting a bow. Also music gear segment saw the same introduction of motorized inputs. subMatrix's Beettweek (\cite{submatrix2024}) and Der Mann mit der Maschine's M4 (\cite{dmm2024}) were two new interesting \gls{dmi} controllers having motorized knob and sliders respectively, providing various force feedback modes. Furthermore, Melbourne Instruments announced Nina (\cite{melbourneinstruments2024}), a fully featured synthesizer with over 30 motorized knobs, representing the current cutting edge of force feedback enabled synthesizers.
 
-This document is structured as follows. Chapter \ref{ch:esitystyyli} discusses briefly the basics of writing and presentation style regarding the text, figures, tables and mathematical notations. Chapters \ref{ch:viittaustekniikat} and \ref{ch:yhteenveto} summarize the referencing basics and the whole document. Each part also features tips to solving some of the detailed issues that relate to writing in \LaTeX.
+Motorized inputs can't solve the problem of one input controlling multiple parameters, but they might be beneficial by allowing the feel of the input change depending on the edited parameter. In this study I aim to find out whether that is the case or not. By combining qualitative and quantitative research methods I examine if force feedback has an effect to a user's subjective experience of usability and enjoyability, and objective measurable performance.

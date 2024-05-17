@@ -1,0 +1,51 @@
+\section{Motorized physical sliders and their force feedback modes}
+
+A motorized physical slider is a one-dimensional linear potentiometer, a slider, coupled with a motor. These sliders are manufactured to be used on mixing consoles (\cite{bourns2020}) where the motor is used to simply position the slider to a desired position, however past research has demonstrated how it can also be used to provide users with force feedback (\cite{andersen2008, bak2015, beamish2004, berdahl-kontogeorgakopoulos2013, gillespie-rosenberg2005}). Especially several papers affiliated with Dr Morten Fjeld have presented various force feedback modes for sliders (\cite{jenaro2007, kretz2005, shahrokni2006}). All those papers agree on five basic modes which can be used to form more advanced ones: \textit{Position}, \textit{Elasticity}, \textit{Detents/Gradual}, \textit{Texture}, and \textit{Oscillation}. In addition, a student paper \textcite{kretz2004} also lists \textit{Friction} as one of the modes, and although it is missing from the later peer reviewed publications, I have decided to include it for completeness. Table \ref{fjeldmodes} explains the behaviour of these six force feedback modes.
+
+\begin{table}[h!]
+	\centering
+	\begin{tabularx}{\textwidth}{ |c|X| }
+		\hline
+		\thead{Mode} & \thead{Description} \\
+		\hline
+		Position & Motor is turned off: the slider moves freely, and no force feedback is applied. \\
+		\hline
+		Elasticity & The slider emulates a rubber band: the more it is displaced from the initial position, the more it "fights back". When released the slider returns to the initial position. \\
+		\hline
+		Detents/Gradual & The slider emulates detents: while moving the slider snaps to discreet positions or "detents". \\
+		\hline
+		Texture & The slider emulates a rough surface: while moving the motor applies low-intensity vibration to it, thus giving an appearance of a rough surface. \\
+		\hline
+		Oscillation & The slider emulates damped sine movement: when released it returns to initial position following a damped sine curve. \\
+		\hline
+		Friction & The slider emulates high friction: while initiating a movement the motor applies high counter force, when released the slider stays in place. \\
+		\hline
+	\end{tabularx}
+	\caption{Force feedback modes for a motorized slider, proposed by \textcite{kretz2004}.}
+	\label{fjeldmodes}
+\end{table}
+
+Besides Fjeld's basic force feedback modes, the other research papers (\cite{andersen2008, bak2015, beamish2004, berdahl-kontogeorgakopoulos2013, gillespie-rosenberg2005}) mentioned at the beginning of this chapter propose various advanced modes, which are introduced here briefly. First, \textcite{gillespie-rosenberg2005} present a novel force feedback mode, where the slider emulates a needle penetrating through multiple layers of different tissues. The motor applies countering force to the slider movement based on prior measurements done with tomatoes and pears, whose structures resemble different human tissues. This mode is suggested to be used for teaching epidural analgesia to medical students. (\cite{gillespie-rosenberg2005}.)
+
+Meanwhile, \textcite{beamish2004} and \textcite{andersen2008} both use audio's amplitude as a source for feedback but utilize it in very different ways. Specifically, Beamish et al.'s "Q-Slider" indicates the position of a song by automatically moving the slider's position and allows the user to set the position by moving the slider by hand. While moving the slider, a counter force is applied proportional to the song's amplitude on the slider's position, hence making moving the slider easier on quieter parts of a song and harder on louder parts. This was demonstrated to be a highly effective way to find different parts of a song by feeling. (\cite{beamish2004}.) On the other hand, Andersen et al. tried to map a slider's position directly to audio's amplitude, however they realized it would be impossible for a human to move the slider up and down fast enough to get audible frequencies. As another option they ended up mapping the slider to amplitude envelope instead, so one end of the slider would mute the audio and the other end would keep it at initial volume. Furthermore, user's slider movements would be saved and when released the motor would keep moving the slider automatically to play back the saved movements, allowing user to generate custom amplitude modulations. (\cite{andersen2008}.)
+
+Finally, \textcite{berdahl-kontogeorgakopoulos2013} and \textcite{bak2015} present multiple ways of utilizing motorized sliders. For example, Berdahl and Kontogeorgakopoulos' (\citeyear{berdahl-kontogeorgakopoulos2013}) "FireFader" was used to emulate a virtual mass hanging from the slider with a spring and plucking of a virtual string. Furthermore, \textcite{bak2015} display results of classes and workshops about sound synthesis and haptics held from 2011 to 2015. One such result was "Duojam", where two motorized sliders virtually attract each other.
+
+\section{Electrophones and Digital Musical Instruments}
+
+Electrophones are musical instruments that produce sound by generating an electrical signal that drives a loudspeaker (\cite{mimo2011}). They were first categorized in \textit{A Textbook of European Musical Instruments: Their Origin, History and Character} (\cite{galpin1937}) as \textit{“electrophonic instruments”} and later normalized as \textit{"electrophones"}, the fifth category of Hornbostel-Sachs classification of musical instruments (\cite{lee2019}). While electrophones include instruments such as electric guitars, where acoustic signal is amplified with electric circuitry, and pipe organs, where acoustic signal is heard when electrically controlled valve is opened, in this study I focus on electrophones that generate sound using electrical circuitry only. These instruments overlap with the definition of \glspl{dmi}.
+
+Modern \gls{dmi} research builds on top of \citeauthor{miranda-wanderley2006}'s (\citeyear{miranda-wanderley2006}) \textit{New digital musical instruments: control and interaction beyond the keyboard}\footnote{As of writing, \textit{New digital musical instruments: control and interaction beyond the keyboard} is cited 748 times in total and 124 times in 2020 or later (Google Scholar, fetched 3.4.2023).}, which classifies \glspl{dmi} as instruments which consist of two distinct modules: a \gls{controller} and a \gls{synth}. A user interacts with the \gls{controller} (for example by pushing a button or moving a slider on it), which transforms the interaction to an electrical signal. These signals are mapped to one or more parameters of a \gls{synth}, which uses that information and its own algorithm to generate a sound wave. (\cite{miranda-wanderley2006}.)
+
+\glspl{dmi} provide user with two types of feedback: primary feedback (visual, auditory, and tactile-kinesthetic) from the \gls{controller} and secondary feedback (auditory) from the \gls{synth}. The auditory feedback of the \gls{controller} means the mechanical noises that come from operating the \gls{controller} (such as button clicks), while the feedback from the \gls{synth} is the actual sound wave it generates, making them fundamentally different. With traditional instruments the auditory feedback is often accompanied with tactile feedback, as the user can feel the elements generating the sound (i.e., a string or a membrane) vibrating. This tactile feedback is inherently missing from \glspl{dmi} due to decoupling of \gls{controller} and \gls{synth}. Figure \ref{dmi} visualizes the flow within \gls{dmi} from user interaction to received feedback. (\cite{miranda-wanderley2006}.)
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\linewidth]{figures/dmi.png}
+	\caption{Representation of a \gls{dmi} adapted from \textcite{miranda-wanderley2006}.}
+	\label{dmi}
+\end{figure}
+
+\textit{Sound synthesis and sampling} (\cite{russ2009}) describes a vast number of sound synthesis techniques used in \gls{synth} part of \glspl{dmi}. \textcite{russ2009} categorizes sound synthesis techniques into five main categorizes: physical, analogue, hybrid, digital, and computer software. Analogue synthesis uses electrical circuitry to generate a continuous electrical signal for representing a sound wave, while digital synthesis uses components like microprocessors to process binary data to represent that. (\cite{russ2009}.) Note that also instruments using analogue synthesis are considered \acrlongpl{dmi}.
+
+Particularly prevalent analogue synthesis technique is "subtractive synthesis", in which sound generation starts with harmonically rich waveform which is then modified with a filter that takes out some of the harmonies, while "analogue modeling" is a digital synthesis technique that emulates subtractive synthesis with digital circuitry (\cite{russ2009}). Modern analogue modeling synthesizers sound very close to their analogue counterparts while often offering more features and/or lower price, which have made them popular among consumers (\cite{russ2009}). In this research I focus on analogue modeling synthesis.

@@ -1,0 +1,6 @@
+MAE,Detents (possible),Detents (impossible),Total MAE
+Filter cutoff frequency,11.83,13.88,13.00
+EG attack time,6.33,7.44,7.00
+LFO rate,5.50,17.83,10.79
+LFO amount to PWM,33.88,10.83,24.00
+Total MAE,15.14,12.07,13.58

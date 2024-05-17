@@ -68,8 +68,8 @@
 % The appropriate Finnish language code is 'fi',
 % UK English is en-UK
 \begin{filecontents*}[overwrite]{\jobname.xmpdata}
-\Title{Title}
-\Author{Firstname Lastname}
+\Title{HapSynth}
+\Author{Ville Helppolainen}
 \Language{en-US}
 \end{filecontents*}
 
@@ -90,7 +90,7 @@
 %   programs - if you wish to display code snippets
 % Example: \documentclass[english, authoryear]{tauthesis}
 %          thesis in English with author-year citations
-\documentclass{tauthesis}
+\documentclass[english, apa]{tauthesis}
 
 % The glossaries package throws a warning:
 % No language module detected for 'finnish'.
@@ -126,6 +126,22 @@
 % (SI) unit handling
 % \usepackage{siunitx}
 
+\usepackage{tabularx}
+\renewcommand\tabularxcolumn[1]{m{#1}}
+\newcommand*{\thead}[1]{\bfseries\hspace*{\fill}{#1}\hspace*{\fill}}
+
+\usepackage{multirow}
+
+\usepackage{svg}
+\usepackage{csvsimple}
+
+\usepackage{pdflscape}
+
+\usepackage{placeins}
+
+\usepackage{todonotes}
+\newcommand\todox[1]{\todo[size=\tiny]{#1}}
+
 %\sisetup{
 %    detect-all,
 %    math-sf=\mathrm,
@@ -137,6 +153,8 @@
 
 % Print verbatim LaTeX commands
 \newcommand{\verbcommand}[1]{\texttt{\textbackslash #1}}
+
+\DeclareUnicodeCharacter{03C3}{$\boldsymbol{\sigma}$}
 
 % Basic theorems in Finnish and in English.
 % Remove [chapter] if you wish a simply
@@ -172,7 +190,7 @@
 
 % Use this line if using the default glossary.
 % Otherwise comment out.
-\loadglsentries[main]{tex/sanasto.tex}
+\loadglsentries[main]{tex/glossary.tex}
 
 % Use this line if using more than one glossary.
 % Otherwise comment out.
@@ -233,11 +251,11 @@
 % the primary language as the first argument
 % and its translation to the secondary language
 % as the second.
-\title{Kuvaava otsikko}{A Descriptive Title}
-\subtitle{Tarkentava alaotsikko}{A Specifying Subtitle}
+\title{HapSynth}{}
+\subtitle{Utilizing force feedback on digital musical instruments}{}
 
 % The author name.
-\author{Etunimi Sukunimi}
+\author{Ville Helppolainen}
 
 % The examiner information.
 % If your work has multiple examiners, replace with
@@ -246,27 +264,27 @@
 % e.g. Examiners or Tarkastajat, and <name>s are
 % replaced by the examiner names, each on their
 % separate line.
-\examiner[Tarkastajat]{Prof. Proffa Proffanen}
+\examiner[Examiners]{Prof. Proffa Proffanen}
 
 % The finishing date of the thesis (YYYY-MM-DD).
-\finishdate{2021}{06}{24}
+\finishdate{1970}{01}{01}
 
 % The type of the thesis (e.g. Kandidaatintyö
 % or Master of Science Thesis) in the primary
 % and the secondary languages of the thesis.
-\thesistype{Opinnäytetyön taso}{Thesis type}
+\thesistype{Master of Science Thesis}{}
 
 % The faculty and degree programme names in
 % the primary and the secondary languages of
 % the thesis.
-\facultyname{Tiedekunnan nimi}{Faculty Name}
-\programmename{Tutkinto-ohjelma}{Degree Programme}
+\facultyname{Faculty of Information Technology and Communication Sciences}{}
+\programmename{Master's Degree Programme in Human-Technology Interaction}{}
 
 % The keywords to the thesis in the primary and
 % the secondary languages of the thesis
 \keywords%
-    {avainsana, avainsana, avainsana, avainsana, avainsana}
-    {keyword, keyword, keyword, keyword, keyword}
+    {haptics, force feedback, digital musical instruments}
+    {}
 
 \maketitle
 
@@ -282,9 +300,8 @@
 % first abstract. The second argument of
 % the \preface command takes the place where
 % the thesis was signed in.
-\abstract{tex/tiivistelma.tex}
-\otherabstract{tex/abstract.tex}
-\preface{tex/alkusanat.tex}{Tampereella}
+\abstract{tex/abstract.tex}
+% \preface{tex/preface.tex}{At Tampere}
 
 %%%%% Table of contents.
 
@@ -312,7 +329,7 @@
 % Print the default glossary of abbreviations,
 % if necessary. Otherwise comment out.
 % The appropriate Finnish variant is 'Lyhenteet'
-\printglossary[title={Lyhenteet ja merkinnät}]
+\printglossary[title={Glossary}]
 
 % Print more than one glossary with these lines.
 % Otherwise comment out.
@@ -324,29 +341,25 @@
 
 \mainmatter
 
-% Write each of the chapters of the thesis
-% into a separate file for the sake of clarity.
-% They can be \input as shown below. Give both
-% the chapters and their files as descriptive
-% names as possible.
-\chapter{Johdanto}
-\label{ch:johdanto}
+\chapter{Introduction}
+\label{ch:introduction}
+\input{tex/introduction.tex}
 
-\input{tex/johdanto.tex}
+\chapter{Past research}
+\label{ch:theory}
+\input{tex/theory.tex}
 
-\chapter{Esitystyyli}
-\label{ch:esitystyyli}
-\input{tex/esitystyyli.tex}
+\chapter{Methodology}
+\label{ch:methodology}
+\input{tex/methodology.tex}
 
-\chapter{Viittaustekniikat}
-\label{ch:viittaustekniikat}
-\input{tex/viittaustekniikat.tex}
+\chapter{Results and analysis}
+\label{ch:results}
+\input{tex/results.tex}
 
-% Add chapters similarly.
-
-\chapter{Yhteenveto}
-\label{ch:yhteenveto}
-\input{tex/yhteenveto.tex}
+\chapter{Conclusion}
+\label{ch:conclusion}
+\input{tex/conclusion.tex}
 
 %%%%% Bibliography/references.
 
@@ -365,9 +378,48 @@
 
 \begin{appendices}
 
-\chapter{Esimerkkiliite}
-\label{ch:liite}
-\input{./tex/liite.tex}
+\chapter{HapSynth GitHub repository link}
+\label{ch:github}
+\url{https://github.com/SirMorland/HapSynth}
+
+\newgeometry{a4paper,
+             top=2.5cm,
+             bottom=2.5cm,
+             left=0cm,
+             right=0cm}
+    \begin{landscape}
+        \chapter{Button layout handout}
+        \thispagestyle{empty}
+        \label{ch:button}
+        \input{tex/layout.tex}
+    \end{landscape}
+\restoregeometry
+
+\newgeometry{a4paper,
+             top=2.5cm,
+             bottom=2.5cm,
+             left=0cm,
+             right=0cm}
+    \begin{landscape}
+        \chapter{Schematics}
+        \thispagestyle{empty}
+        \label{ch:schematics}
+        \input{tex/schematics.tex}
+    \end{landscape}
+\restoregeometry
+
+\newgeometry{a4paper,
+             top=2.5cm,
+             bottom=2.5cm,
+             left=0cm,
+             right=0cm}
+    \begin{landscape}
+        \chapter{Bill of materials}
+        \thispagestyle{empty}
+        \label{ch:bom}
+        \input{tex/bom.tex}
+    \end{landscape}
+\restoregeometry
 
 \end{appendices}
 

@@ -1,0 +1,6 @@
+MAE,Position,Detents,Texture,Friction,Total MAE
+Filter cutoff frequency,7.79,13.00,10.20,8.80,9.93
+EG attack time,10.53,7.00,4.07,9.60,7.80
+LFO rate,9.38,10.79,6.83,12.69,10.00
+LFO amount to PWM,17.85,24.00,17.25,19.38,19.75
+Total MAE,11.29,13.58,9.31,12.38,11.67
