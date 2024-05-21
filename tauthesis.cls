@@ -221,7 +221,8 @@
     [backend=biber,
     autolang=other,
     citestyle=\@citationstyle,
-    bibstyle=\@citationstyle]{biblatex}
+    bibstyle=\@citationstyle,
+    sorting=ynt]{biblatex}
 
 \DefineBibliographyStrings{finnish}{%
     bibliography = {Lähteet},
